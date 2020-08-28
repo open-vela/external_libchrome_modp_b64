@@ -1,0 +1,13 @@
+#
+# For a description of the syntax of this configuration file,
+# see kconfig-language at https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt
+#
+
+config LIB_MODPB64
+	bool "Enable Modp Base64 Decoder"
+	default n
+	---help---
+		The modp_b64.c file was modified to remove the inclusion of modp's config.h
+		and to fix compilation errors that occur under VC8.  The file was renamed
+		modp_b64.cc to force it to be compiled as C++ so that the inclusion of
+		basictypes.h could be possible.
