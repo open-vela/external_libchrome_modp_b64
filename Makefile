@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2020 Xiaomi Corporation
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-include $(APPDIR)/Make.defs
+include common.mk
 
-CXXEXT  = .cc
-CXXSRCS = modp_b64.cc
-CXXFLAGS += ${shell $(INCDIR) $(INCDIROPT) "$(CC)" modp_b64}
+CXXFLAGS += -I$(SRC)/modp_b64/
+CXX_STATIC_LIBRARY(libmodpb64.pie.a): $(CXX_OBJECTS)
 
-include $(APPDIR)/Application.mk
+all: CXX_STATIC_LIBRARY(libmodpb64.pie.a)
