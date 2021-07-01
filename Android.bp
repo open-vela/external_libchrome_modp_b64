@@ -32,7 +32,6 @@ license {
 cc_library_static {
     name: "libmodpb64",
     host_supported: true,
-    ramdisk_available: true,
     recovery_available: true,
     vendor_available: true,
     srcs: ["modp_b64.cc"],
