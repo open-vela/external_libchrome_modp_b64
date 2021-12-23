@@ -42,6 +42,7 @@ cc_library_static {
     ],
     local_include_dirs: ["modp_b64"],
     export_include_dirs: ["."],
+    min_sdk_version: "30",
 }
 
 cc_library_static {
