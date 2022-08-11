@@ -12,27 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package {
-    default_applicable_licenses: ["external_modp_b64_license"],
-}
-
-// Added automatically by a large-scale-change
-// See: http://go/android-license-faq
-license {
-    name: "external_modp_b64_license",
-    visibility: [":__subpackages__"],
-    license_kinds: [
-        "SPDX-license-identifier-BSD",
-    ],
-    license_text: [
-        "LICENSE",
-    ],
-}
-
 cc_library_static {
     name: "libmodpb64",
     host_supported: true,
-    ramdisk_available: true,
     recovery_available: true,
     vendor_available: true,
     srcs: ["modp_b64.cc"],
@@ -43,11 +25,6 @@ cc_library_static {
     ],
     local_include_dirs: ["modp_b64"],
     export_include_dirs: ["."],
-    min_sdk_version: "30",
-    apex_available: [
-        "//apex_available:platform",
-        "com.android.bluetooth",
-    ],
 }
 
 cc_library_static {
